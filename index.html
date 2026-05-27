@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="StickSensei" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Calculadoras fiscales gratuitas para autónomos en España. Cuota RETA, IRPF, IVA trimestral y más." />
+  <title>CalculadorAutónomos — Herramientas fiscales para autónomos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">⚖️</span>
+        <span class="logo-text">Calculador<strong>Autónomos</strong></span>
+      </div>
+      <nav class="main-nav">
+        <a href="#cuota" class="nav-link active">Cuota RETA</a>
+        <a href="#irpf" class="nav-link">IRPF</a>
+        <a href="#iva" class="nav-link">IVA</a>
+        <a href="#neto" class="nav-link">Salario neto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <p class="hero-tag">Herramientas fiscales gratuitas · España 2026</p>
+      <h1 class="hero-title">Conoce exactamente<br>lo que pagas</h1>
+      <p class="hero-sub">Calculadoras actualizadas para autónomos. Sin letra pequeña, sin registro.</p>
+    </div>
+  </section>
+
+  <main class="container" id="cuota">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-badge">Cuota RETA 2026</div>
+        <h2 class="card-title">Calculadora de cuota de autónomo</h2>
+        <p class="card-desc">Calcula tu cuota mensual a la Seguridad Social según el sistema de cotización por ingresos reales.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="ingresos">Ingresos brutos anuales estimados</label>
+        <div class="input-wrap">
+          <input type="number" id="ingresos" placeholder="25.000" min="0" />
+          <span class="input-unit">€</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="gastos">Gastos deducibles anuales</label>
+        <div class="input-wrap">
+          <input type="number" id="gastos" placeholder="5.000" min="0" />
+          <span class="input-unit">€</span>
+        </div>
+      </div>
+
+      <button class="btn-calcular" onclick="calcularCuota()">
+        Calcular cuota mensual
+        <span class="btn-arrow">→</span>
+      </button>
+
+      <div class="resultado" id="resultado">
+        <div class="resultado-grid">
+          <div class="resultado-item">
+            <span class="resultado-label">Rendimiento neto anual</span>
+            <span class="resultado-value" id="r-neto"></span>
+          </div>
+          <div class="resultado-item">
+            <span class="resultado-label">Rendimiento neto mensual</span>
+            <span class="resultado-value" id="r-neto-mes"></span>
+          </div>
+          <div class="resultado-item">
+            <span class="resultado-label">Base de cotización</span>
+            <span class="resultado-value" id="r-base"></span>
+          </div>
+          <div class="resultado-item">
+            <span class="resultado-label">Tipo aplicado</span>
+            <span class="resultado-value" id="r-tipo"></span>
+          </div>
+        </div>
+        <div class="resultado-total">
+          <span>Cuota mensual estimada</span>
+          <span id="r-cuota"></span>
+        </div>
+        <p class="resultado-tramo" id="r-tramo"></p>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>¿Cómo funciona el nuevo sistema?</h3>
+      <p>Desde 2023, los autónomos cotizan según sus <strong>ingresos reales</strong> divididos en 15 tramos. A mayor rendimiento neto, mayor cuota mensual. Puedes ajustar tu base de cotización hasta 6 veces al año.</p>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>calculadorautonomos.es — Herramienta orientativa, no constituye asesoramiento fiscal.</p>
+      <p>© 2026 · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
