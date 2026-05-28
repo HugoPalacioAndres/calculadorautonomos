@@ -8,13 +8,13 @@
   --accent: #c8a96e;
   --accent-light: #f5edd9;
   --text: #1a1a2e;
-  --text-muted: #7a7a8a;
+  --text-muted: #5a5a6a;
   --border: #e8e4dc;
   --success: #2d6a4f;
   --radius: 16px;
   --shadow: 0 4px 32px rgba(26, 26, 46, 0.08);
   --shadow-hover: 0 8px 48px rgba(26, 26, 46, 0.14);
-  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-display: swap;
   --font-body: 'DM Sans', sans-serif;
   --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }

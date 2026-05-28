@@ -27,7 +27,10 @@
   <meta name="twitter:description" content="Calculadoras fiscales gratuitas para autónomos en España." />
   <title>CalculadorAutónomos — Herramientas fiscales para autónomos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap"></noscript>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/x-icon" href="/favicon_io/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />
@@ -40,7 +43,7 @@
     <div class="container">
       <div class="logo">
         <span class="logo-icon">⚖️</span>
-        <span class="logo-text">Calculador<strong>Autónomos</strong></span>
+        <span class="logo-text" aria-label="Inicio CalculadorAutónomos">Calculador<strong>Autónomos</strong></span>
       </div>
      <nav class="main-nav">
         <a href="index.html" class="nav-link active">Cuota RETA</a>
@@ -127,7 +130,7 @@
   <footer class="site-footer">
   <div class="container">
     <p>calculadorautonomos.es — Herramienta orientativa, no constituye asesoramiento fiscal.</p>
-    <p>© 2026 · <a href="legal.html" style="color:rgba(255,255,255,0.4)">Aviso legal</a> · <a href="privacidad.html" style="color:rgba(255,255,255,0.4)">Privacidad</a> · <a href="cookies.html" style="color:rgba(255,255,255,0.4)">Cookies</a></p>
+    <p>© 2026 · <a href="legal.html" style="color:rgba(255,255,255,0.4)">Aviso legal</a> · <a href="privacidad.html" style="color:rgba(255,255,255,0.4)">Privacidad</a> · <a href="cookies.html" style="color:rgba(255,255,255,0.4)" aria-label="Política de cookies">Cookies</a></p>
   </div>
 </footer>
 
