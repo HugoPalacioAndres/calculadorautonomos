@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSPBR1PL7K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BSPBR1PL7K');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="author" content="StickSensei" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Calculadora de IRPF 2026 para autónomos en España. Calcula tu retención trimestral y cuánto pagarás en la declaración de la renta." />
+  <title>Calculadora IRPF 2026 para Autónomos | CalculadorAutónomos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/irpf.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">⚖️</span>
+        <span class="logo-text"><a href="index.html" style="text-decoration:none;color:inherit">Calculador<strong>Autónomos</strong></a></span>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Cuota RETA</a>
+        <a href="irpf.html" class="nav-link active">IRPF</a>
+        <a href="iva.html" class="nav-link">IVA</a>
+        <a href="neto.html" class="nav-link">Salario neto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <p class="hero-tag">Herramientas fiscales gratuitas · España 2026</p>
+      <h1 class="hero-title">Calculadora de IRPF<br>para autónomos</h1>
+      <p class="hero-sub">Calcula tu retención trimestral y lo que pagarás en la renta. Sin sorpresas a final de año.</p>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-badge">IRPF 2026 · Modelo 130</div>
+        <h2 class="card-title">Calcula tu pago fraccionado</h2>
+        <p class="card-desc">Los autónomos en estimación directa deben ingresar el 20% del rendimiento neto cada trimestre mediante el modelo 130.</p>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="ingresos-tri">Ingresos del trimestre</label>
+          <div class="input-wrap">
+            <input type="number" id="ingresos-tri" placeholder="10.000" min="0" />
+            <span class="input-unit">€</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="gastos-tri">Gastos deducibles del trimestre</label>
+          <div class="input-wrap">
+            <input type="number" id="gastos-tri" placeholder="2.000" min="0" />
+            <span class="input-unit">€</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="pagos-ant">Pagos fraccionados anteriores este año</label>
+          <div class="input-wrap">
+            <input type="number" id="pagos-ant" placeholder="0" min="0" />
+            <span class="input-unit">€</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="retenciones">Retenciones soportadas este año</label>
+          <div class="input-wrap">
+            <input type="number" id="retenciones" placeholder="0" min="0" />
+            <span class="input-unit">€</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-calcular" onclick="calcularIRPF()">
+        Calcular pago trimestral
+        <span class="btn-arrow">→</span>
+      </button>
+
+      <div class="resultado" id="resultado-irpf">
+        <div class="resultado-grid">
+          <div class="resultado-item">
+            <span class="resultado-label">Rendimiento neto trimestral</span>
+            <span class="resultado-value" id="r-neto-tri"></span>
+          </div>
+          <div class="resultado-item">
+            <span class="resultado-label">Base acumulada anual</span>
+            <span class="resultado-value" id="r-base-acum"></span>
+          </div>
+          <div class="resultado-item">
+            <span class="resultado-label">20% sobre base acumulada</span>
+            <span class="resultado-value" id="r-veinte"></span>
+          </div>
+          <div class="resultado-item">
+            <span class="resultado-label">Menos pagos y retenciones</span>
+            <span class="resultado-value" id="r-menos"></span>
+          </div>
+        </div>
+        <div class="resultado-total" id="resultado-total-irpf">
+          <span>A ingresar este trimestre</span>
+          <span id="r-ingreso"></span>
+        </div>
+        <p class="resultado-tramo" id="r-aviso"></p>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>¿Qué es el modelo 130?</h3>
+        <p>Es el pago fraccionado del IRPF que presentan los autónomos en estimación directa cada trimestre — en abril, julio, octubre y enero.</p>
+      </div>
+      <div class="info-card">
+        <h3>¿Quién está exento?</h3>
+        <p>Si más del 70% de tus ingresos llevan retención del pagador, estás exento de presentar el modelo 130 ese trimestre.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>calculadorautonomos.es — Herramienta orientativa, no constituye asesoramiento fiscal.</p>
+      <p>© 2026 · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="js/irpf.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+/* =====================
+   IRPF — ESTILOS ESPECÍFICOS
+   ===================== */
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 0;
+}
+
+.resultado-total.negativo {
+  background: var(--success);
+}
+
+.resultado-total.cero {
+  background: #555;
+}
+
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+  .info-grid { grid-template-columns: 1fr; }
+}
