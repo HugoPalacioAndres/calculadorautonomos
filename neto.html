@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSPBR1PL7K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BSPBR1PL7K');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="author" content="StickSensei" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Calculadora de salario neto 2026 para autónomos en España. Descubre cuánto te queda realmente después de impuestos y cotizaciones." />
+  <title>Calculadora Salario Neto 2026 | CalculadorAutónomos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/neto.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">⚖️</span>
+        <span class="logo-text"><a href="index.html" style="text-decoration:none;color:inherit">Calculador<strong>Autónomos</strong></a></span>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Cuota RETA</a>
+        <a href="irpf.html" class="nav-link">IRPF</a>
+        <a href="iva.html" class="nav-link">IVA</a>
+        <a href="neto.html" class="nav-link active">Salario neto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <p class="hero-tag">Herramientas fiscales gratuitas · España 2026</p>
+      <h1 class="hero-title">¿Cuánto te queda<br>realmente?</h1>
+      <p class="hero-sub">Calcula tu salario neto real como autónomo después de cuota RETA, IRPF y gastos deducibles.</p>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-badge">Salario neto 2026</div>
+        <h2 class="card-title">Calculadora de ingresos reales</h2>
+        <p class="card-desc">Introduce tus ingresos brutos anuales y tus gastos. Te mostramos el desglose completo de lo que realmente te queda en el bolsillo.</p>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="ingresos-brutos">Ingresos brutos anuales</label>
+          <div class="input-wrap">
+            <input type="number" id="ingresos-brutos" placeholder="30.000" min="0" />
+            <span class="input-unit">€</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="gastos-deducibles">Gastos deducibles anuales</label>
+          <div class="input-wrap">
+            <input type="number" id="gastos-deducibles" placeholder="5.000" min="0" />
+            <span class="input-unit">€</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="hijos">Hijos menores de 25 años</label>
+          <div class="input-wrap">
+            <input type="number" id="hijos" placeholder="0" min="0" max="10" />
+            <span class="input-unit">#</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="discapacidad">Discapacidad reconocida (%)</label>
+          <div class="input-wrap">
+            <input type="number" id="discapacidad" placeholder="0" min="0" max="100" />
+            <span class="input-unit">%</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-calcular" onclick="calcularNeto()">
+        Calcular salario neto
+        <span class="btn-arrow">→</span>
+      </button>
+
+      <div class="resultado" id="resultado-neto">
+        <div class="resultado-grid">
+          <div class="resultado-item">
+            <span class="resultado-label">Ingresos brutos</span>
+            <span class="resultado-value" id="r-brutos"></span>
+          </div>
+          <div class="resultado-item">
+            <span class="resultado-label">Gastos deducibles</span>
+            <span class="resultado-value" id="r-gastos"></span>
+          </div>
+          <div class="resultado-item">
+            <span class="resultado-label">Rendimiento neto</span>
+            <span class="resultado-value" id="r-neto"></span>
+          </div>
+          <div class="resultado-item">
+            <span class="resultado-label">Cuota RETA anual</span>
+            <span class="resultado-value" id="r-reta"></span>
+          </div>
+          <div class="resultado-item">
+            <span class="resultado-label">IRPF estimado anual</span>
+            <span class="resultado-value" id="r-irpf"></span>
+          </div>
+          <div class="resultado-item">
+            <span class="resultado-label">Total cargas fiscales</span>
+            <span class="resultado-value" id="r-cargas"></span>
+          </div>
+        </div>
+
+        <div class="resultado-total">
+          <span>Salario neto anual</span>
+          <span id="r-neto-anual"></span>
+        </div>
+
+        <div class="neto-mensual">
+          <span>Equivale a</span>
+          <span id="r-neto-mensual"></span>
+          <span>al mes</span>
+        </div>
+
+        <div class="neto-barra">
+          <div class="barra-label">
+            <span>Distribución de ingresos</span>
+          </div>
+          <div class="barra-wrap">
+            <div class="barra-seg barra-neto" id="barra-neto-w" title="Neto"></div>
+            <div class="barra-seg barra-reta" id="barra-reta-w" title="RETA"></div>
+            <div class="barra-seg barra-irpf" id="barra-irpf-w" title="IRPF"></div>
+            <div class="barra-seg barra-gastos" id="barra-gastos-w" title="Gastos"></div>
+          </div>
+          <div class="barra-legend">
+            <span><span class="dot dot-neto"></span>Neto</span>
+            <span><span class="dot dot-reta"></span>RETA</span>
+            <span><span class="dot dot-irpf"></span>IRPF</span>
+            <span><span class="dot dot-gastos"></span>Gastos</span>
+          </div>
+        </div>
+
+        <p class="resultado-tramo" id="r-aviso-neto"></p>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>¿Qué incluye el cálculo?</h3>
+        <p>La cuota RETA según los tramos 2026, la estimación de IRPF por tramos y tus gastos deducibles. El resultado es orientativo.</p>
+      </div>
+      <div class="info-card">
+        <h3>Cómo aumentar tu neto</h3>
+        <p>Registra todos tus gastos deducibles — material, teléfono, transporte, formación. Cada euro deducible reduce tu base imponible.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>calculadorautonomos.es — Herramienta orientativa, no constituye asesoramiento fiscal.</p>
+      <p>© 2026 · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="js/neto.js"></script>
+</body>
+</html>
