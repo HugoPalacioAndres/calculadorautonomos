@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="StickSensei" />
+  <title>Página no encontrada | CalculadorAutónomos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/x-icon" href="/favicon_io/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png" />
+  <style>
+    .not-found {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 48px 24px;
+    }
+    .not-found-code {
+      font-family: var(--font-display);
+      font-size: clamp(5rem, 15vw, 9rem);
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 16px;
+      opacity: 0.4;
+    }
+    .not-found h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .not-found p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 400px;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+    .not-found-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .not-found-links a {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-home {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-home:hover { background: #2d2d4e; }
+    .btn-blog {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--border);
+    }
+    .btn-blog:hover { border-color: var(--primary); }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">
+      <span class="logo-icon">⚖️</span>
+      <span class="logo-text"><a href="index.html" style="text-decoration:none;color:inherit">Calculador<strong>Autónomos</strong></a></span>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Cuota RETA</a>
+      <a href="irpf.html" class="nav-link">IRPF</a>
+      <a href="iva.html" class="nav-link">IVA</a>
+      <a href="neto.html" class="nav-link">Salario neto</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<div class="not-found">
+  <div class="not-found-code">404</div>
+  <h1>Página no encontrada</h1>
+  <p>La página que buscas no existe o ha sido movida. Pero seguro que encuentras lo que necesitas desde aquí.</p>
+  <div class="not-found-links">
+    <a href="index.html" class="btn-home">Ir a la calculadora →</a>
+    <a href="blog.html" class="btn-blog">Ver el blog</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>calculadorautonomos.es — Herramienta orientativa, no constituye asesoramiento fiscal.</p>
+    <p>© 2026 · <a href="legal.html" style="color:rgba(255,255,255,0.4)">Aviso legal</a> · <a href="privacidad.html" style="color:rgba(255,255,255,0.4)">Privacidad</a> · <a href="cookies.html" style="color:rgba(255,255,255,0.4)">Cookies</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
