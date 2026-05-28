@@ -447,3 +447,109 @@ main.container {
   .site-header .container { flex-direction: column; align-items: flex-start; }
   .hero { padding: 48px 0 56px; }
 }
+
+/* =====================
+   BANNER COOKIES
+   ===================== */
+
+.cookie-banner {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 340px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 48px rgba(26,26,46,0.18);
+  border: 1px solid var(--border);
+  padding: 24px;
+  z-index: 9999;
+  display: none;
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideOutDown {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(20px); }
+}
+
+.cookie-banner-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.cookie-banner-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--primary);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.cookie-banner-text {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.cookie-banner-text a {
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.cookie-banner-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cookie-btn-accept {
+  width: 100%;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 11px 20px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cookie-btn-accept:hover { background: #2d2d4e; }
+
+.cookie-btn-reject {
+  width: 100%;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cookie-btn-reject:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+@media (max-width: 420px) {
+  .cookie-banner {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+  }
+}
