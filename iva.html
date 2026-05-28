@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSPBR1PL7K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BSPBR1PL7K');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="author" content="StickSensei" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Calculadora de IVA trimestral 2026 para autónomos en España. Calcula tu liquidación del modelo 303 fácilmente." />
+  <title>Calculadora IVA Trimestral 2026 | CalculadorAutónomos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/iva.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">⚖️</span>
+        <span class="logo-text"><a href="index.html" style="text-decoration:none;color:inherit">Calculador<strong>Autónomos</strong></a></span>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Cuota RETA</a>
+        <a href="irpf.html" class="nav-link">IRPF</a>
+        <a href="iva.html" class="nav-link active">IVA</a>
+        <a href="neto.html" class="nav-link">Salario neto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <p class="hero-tag">Herramientas fiscales gratuitas · España 2026</p>
+      <h1 class="hero-title">Calculadora de IVA<br>trimestral</h1>
+      <p class="hero-sub">Calcula tu liquidación del modelo 303 en segundos. Sabrás exactamente si pagas o si te devuelven.</p>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-badge">IVA 2026 · Modelo 303</div>
+        <h2 class="card-title">Liquidación trimestral de IVA</h2>
+        <p class="card-desc">Introduce el IVA que has cobrado a tus clientes y el que has pagado en tus gastos. La diferencia es lo que ingresas a Hacienda o lo que te compensan.</p>
+      </div>
+
+      <div class="iva-section-label">IVA repercutido — el que cobras a tus clientes</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="base-rep-21">Base imponible al 21%</label>
+          <div class="input-wrap">
+            <input type="number" id="base-rep-21" placeholder="10.000" min="0" />
+            <span class="input-unit">€</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="base-rep-10">Base imponible al 10%</label>
+          <div class="input-wrap">
+            <input type="number" id="base-rep-10" placeholder="0" min="0" />
+            <span class="input-unit">€</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="base-rep-4">Base imponible al 4%</label>
+          <div class="input-wrap">
+            <input type="number" id="base-rep-4" placeholder="0" min="0" />
+            <span class="input-unit">€</span>
+          </div>
+        </div>
+        <div class="form-group"></div>
+      </div>
+
+      <div class="iva-section-label" style="margin-top:8px">IVA soportado — el que pagas en tus gastos</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="base-sop-21">Base imponible al 21%</label>
+          <div class="input-wrap">
+            <input type="number" id="base-sop-21" placeholder="3.000" min="0" />
+            <span class="input-unit">€</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="base-sop-10">Base imponible al 10%</label>
+          <div class="input-wrap">
+            <input type="number" id="base-sop-10" placeholder="0" min="0" />
+            <span class="input-unit">€</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="base-sop-4">Base imponible al 4%</label>
+          <div class="input-wrap">
+            <input type="number" id="base-sop-4" placeholder="0" min="0" />
+            <span class="input-unit">€</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="comp-ant">Compensación trimestres anteriores</label>
+          <div class="input-wrap">
+            <input type="number" id="comp-ant" placeholder="0" min="0" />
+            <span class="input-unit">€</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-calcular" onclick="calcularIVA()">
+        Calcular liquidación IVA
+        <span class="btn-arrow">→</span>
+      </button>
+
+      <div class="resultado" id="resultado-iva">
+        <div class="resultado-grid">
+          <div class="resultado-item">
+            <span class="resultado-label">IVA repercutido total</span>
+            <span class="resultado-value" id="r-rep-total"></span>
+          </div>
+          <div class="resultado-item">
+            <span class="resultado-label">IVA soportado total</span>
+            <span class="resultado-value" id="r-sop-total"></span>
+          </div>
+          <div class="resultado-item">
+            <span class="resultado-label">Diferencia</span>
+            <span class="resultado-value" id="r-diferencia"></span>
+          </div>
+          <div class="resultado-item">
+            <span class="resultado-label">Compensación aplicada</span>
+            <span class="resultado-value" id="r-comp"></span>
+          </div>
+        </div>
+        <div class="resultado-total" id="resultado-total-iva">
+          <span id="r-label-total">Resultado modelo 303</span>
+          <span id="r-resultado-final"></span>
+        </div>
+        <p class="resultado-tramo" id="r-aviso-iva"></p>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>¿Cuándo se presenta?</h3>
+        <p>El modelo 303 se presenta en abril, julio, octubre y enero — los 20 primeros días del mes siguiente al trimestre.</p>
+      </div>
+      <div class="info-card">
+        <h3>Resultado negativo</h3>
+        <p>Si el IVA soportado supera al repercutido puedes compensarlo en trimestres siguientes o solicitar la devolución en enero.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>calculadorautonomos.es — Herramienta orientativa, no constituye asesoramiento fiscal.</p>
+      <p>© 2026 · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="js/iva.js"></script>
+</body>
+</html>

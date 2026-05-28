@@ -1,0 +1,41 @@
+/* =====================
+   IVA — ESTILOS ESPECÍFICOS
+   ===================== */
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.iva-section-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 8px 14px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  margin-top: 8px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.resultado-total.devolucion {
+  background: var(--success);
+}
+
+.resultado-total.compensar {
+  background: #6b6b8a;
+}
+
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+  .info-grid { grid-template-columns: 1fr; }
+}
